@@ -106,7 +106,11 @@ function verbose_usage()
 	  -h, --help                    display a simply version of help and exit
 	  --long-help                   display this help and exit
 	EOF
-	println 16
+	println 10
+	while read -r ; do echo "${REPLY}" ; done <<-EOF
+	  -n, --no                      answer no for all questions
+	EOF
+	println 6
 	while read -r ; do echo "${REPLY}" ; done <<-EOF
 	  check                         check the version of the installed packages
 	                                of xCAT and packages in the repository
@@ -1747,7 +1751,14 @@ function list_xcat_packages()
 #
 function ask_to_continue()
 {
-	[[ "$1" = "-y" ]] && return 0
+	case "$1" in
+	"-y")
+			return 0
+			;;
+	"-n")
+			exit 0
+			;;
+	esac
 	shift
 	local prompt="$1"
 
@@ -1966,6 +1977,9 @@ do
 		;;
 	"-y"|"--yes")
 		GO_XCAT_YES=("-y")
+		;;
+	"-n"|"--no")
+		GO_XCAT_YES=("-n")
 		;;
 	"-"*)
 		warn_if_bad 1 "invalid option -- \`$1'"

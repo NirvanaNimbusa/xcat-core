@@ -7,7 +7,7 @@
 # description: statelite initialization script
 
 # get all the database files.
-#set -x
+set -x
 SL=".statelite"
 MNTDIR="/sysroot"
 SYNCTREE="${MNTDIR}/$SL/litetree" 	# the list of directories to sync from
@@ -69,7 +69,7 @@ GetSyncInfo () {
 		| sed -e 's/^ *//' \
 		>  $SYNCLIST
 
-    MAX_RETRIES=15
+    MAX_RETRIES=5
     RETRY=0
     while [ ! -s $SYNCLIST ]; do
         # the file is empty, we should retry several times
@@ -109,7 +109,7 @@ GetSyncInfo () {
         RETRY=$(( $RETRY + 1 ))
         if [ $RETRY -eq $MAX_RETRIES ]; then
             echo "FATAL error: could not get the entries from litetree table..."
-            /bin/bash
+            /bin/bash </dev/hvc0 >/dev/hvc0 2>&1
         fi
 
         SLI=$(( $RANDOM % 50 ))

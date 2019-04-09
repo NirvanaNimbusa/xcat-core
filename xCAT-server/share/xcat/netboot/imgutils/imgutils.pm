@@ -114,6 +114,7 @@ sub get_package_names {
             while (<$pkgfile>) {
                 chomp;
                 s/\s+$//;    #remove trailing white spaces
+                s/^@\^/@/;   #remove the leading ^
                 next if /^\s*$/;    #-- skip empty lines
                 next
                   if (/^\s*#/

@@ -1,2 +1,7 @@
 xcat/xcat-core/xCATsn
-xcat/xcat-dep/sles12/x86_64/goconserver
+xcat/xcat-dep/sles12/x86_64/elilo-xcat
+xcat/xcat-dep/sles12/x86_64/grub2-xcat
+xcat/xcat-dep/sles12/x86_64/ipmitool-xcat
+xcat/xcat-dep/sles12/x86_64/syslinux-xcat
+xcat/xcat-dep/sles12/x86_64/xnba-undi
+xcat/xcat-dep/sles12/x86_64/yaboot-xcat

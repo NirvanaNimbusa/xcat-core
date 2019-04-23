@@ -1,3 +1,9 @@
 xcat/xcat-core/xCATsn
 xcat/xcat-dep/rh7/ppc64le/perl-Net-Telnet
 xcat/xcat-dep/rh7/ppc64le/perl-Expect
+xcat/xcat-dep/rh7/ppc64le/elilo-xcat
+xcat/xcat-dep/rh7/ppc64le/grub2-xcat
+xcat/xcat-dep/rh7/ppc64le/ipmitool-xcat
+xcat/xcat-dep/rh7/ppc64le/syslinux-xcat
+xcat/xcat-dep/rh7/ppc64le/xnba-undi
+xcat/xcat-dep/rh7/ppc64le/yaboot-xcat
